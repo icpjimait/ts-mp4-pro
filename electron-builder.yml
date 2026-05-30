@@ -10,6 +10,10 @@ files:
   - out/preload/**/*
   - out/renderer/**/*
 
+extraResources:
+  - from: resources/ffmpeg.exe
+    to: ffmpeg.exe
+
 # Windows 平台的打包配置
 win:
   signAndEditExecutable: false

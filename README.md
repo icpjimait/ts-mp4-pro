@@ -35,6 +35,19 @@ npm run build
 
 本项目默认优先使用 `resources/ffmpeg.exe`（如果存在），否则会尝试调用系统环境变量中的 `ffmpeg`。
 
+### 发布 Release（把 ffmpeg 打进安装包/绿色包，但不提交到仓库）
+
+推荐使用一条命令完成“临时注入 ffmpeg → 打包 → 自动清理”：
+
+```bash
+npm run build:win:release
+```
+
+此命令会按顺序寻找 ffmpeg 来源：
+
+1) 环境变量 `TS2MP4_FFMPEG_EXE` 指向的本机 `ffmpeg.exe`
+2) 系统 `PATH` 中可执行的 `ffmpeg.exe`（通过 `where ffmpeg` 获取）
+
 ## License
 
 MIT

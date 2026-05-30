@@ -36,5 +36,11 @@ export default defineConfig(
       ]
     }
   },
+  {
+    files: ['scripts/**/*.{js,mjs,cjs}'],
+    rules: {
+      '@typescript-eslint/explicit-function-return-type': 'off'
+    }
+  },
   eslintConfigPrettier
 )
