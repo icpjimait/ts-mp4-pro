@@ -1,10 +1,14 @@
 {
   "name": "ts-mp4-pro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Electron application with Vue and TypeScript",
   "main": "./out/main/index.js",
   "author": "example.com",
   "homepage": "https://electron-vite.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/icpjimait/ts-mp4-pro.git"
+  },
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --cache .",
@@ -18,6 +22,8 @@
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
     "build:win:release": "node scripts/with-ffmpeg.mjs \"npm run build\" \"electron-builder --win\"",
+    "publish:win": "node scripts/with-ffmpeg.mjs \"npm run build\" \"electron-builder --win --publish always\"",
+    "publish:win:onTag": "node scripts/with-ffmpeg.mjs \"npm run build\" \"electron-builder --win --publish onTag\"",
     "build:mac": "npm run build && electron-builder --mac",
     "build:linux": "npm run build && electron-builder --linux"
   },

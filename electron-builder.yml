@@ -4,6 +4,8 @@ directories:
   output: dist # 打包产物的输出文件夹
   buildResources: resources
 
+artifactName: ${productName}-${version}-${os}-${arch}-${channel}.${ext}
+
 # 核心：定义哪些编译后的代码和前端资源需要打包进去
 files:
   - out/main/**/*
@@ -29,6 +31,7 @@ win:
 # ✨ NSIS 专业安装向导配置
 nsis:
   oneClick: false                           # 禁用一键傻瓜式安装，开启高级引导
+  artifactName: ${productName}-${version}-${os}-${arch}-setup.${ext}
   allowToChangeInstallationDirectory: true # 允许用户点击“浏览”自主修改安装路径（比如安装到 D 盘）
   perMachine: true                          # 为这台电脑的所有系统用户安装
   createDesktopShortcut: true              # 安装完成后自动在桌面创建快捷方式
@@ -36,3 +39,8 @@ nsis:
   shortcutName: TS转MP4 专家版              # 快捷方式的中文名称
   uninstallDisplayName: TS转MP4 专家版 (卸载) # 卸载程序的名称
   deleteAppDataOnUninstall: true           # 卸载时顺便清理用户本地的 localStorage 缓存
+
+publish:
+  - provider: github
+    owner: icpjimait
+    repo: ts-mp4-pro
