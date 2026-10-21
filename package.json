@@ -1,10 +1,21 @@
 {
   "name": "ts-mp4-pro",
   "version": "1.0.1",
-  "description": "An Electron application with Vue and TypeScript",
+  "description": "TS to MP4 Pro — a free, open-source desktop app that batch-converts .ts video files to .mp4 with FFmpeg. Electron + Vue 3 + TypeScript, with a queued, progress-tracked UI.",
+  "keywords": [
+    "electron",
+    "vue3",
+    "typescript",
+    "ffmpeg",
+    "video-converter",
+    "ts-to-mp4",
+    "mpeg-ts",
+    "desktop-app"
+  ],
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "icpjimait",
+  "license": "MIT",
+  "homepage": "https://github.com/icpjimait/ts-mp4-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/icpjimait/ts-mp4-pro.git"
