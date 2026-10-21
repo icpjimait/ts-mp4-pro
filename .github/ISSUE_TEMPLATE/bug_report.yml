@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a conversion failure, crash or wrong behaviour
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! The more detail you include, the faster it can be reproduced.
+        Please do **not** attach copyrighted video files.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Release version or commit hash, and how you run the app (installer / portable / from source)
+      placeholder: "e.g. 1.0.1, Windows portable build"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "e.g. Windows 11 23H2"
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Conversion mode used
+      options:
+        - Stream copy (lossless / fast)
+        - H.264 re-encode (libx264)
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what actually happened?
+    validations:
+      required: true
+  - type: textarea
+    id: ffprobe
+    attributes:
+      label: Input file info (optional)
+      description: Output of `ffprobe your-file.ts` if available — this helps a lot. Remove any private file paths.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Screenshots of the app state, error messages, anything else relevant.
+    validations:
+      required: false
